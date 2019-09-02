@@ -1,0 +1,39 @@
+#!/bin/bash
+# /usr/bin/blurlock
+
+# take screenshot
+# import -window root /tmp/screenshot.png
+
+# blur it
+# convert /tmp/screenshot.png -blur 0x5 /tmp/screenshotblur.png
+# rm /tmp/screenshot.png
+
+# lock the screen
+# i3lock -i /tmp/screenshotblur.png
+
+#i3lock \
+#  -i /tmp/screenshotblur.png \
+#  --datepos="tx+24:ty+25" \
+#  --clock --datestr "Type password to unlock..." \
+#  --insidecolor=00000000 --ringcolor=ffffffff --line-uses-inside \
+#  --keyhlcolor=d23c3dff --bshlcolor=d23c3dff --separatorcolor=00000000 \
+#  --insidevercolor=fecf4dff --insidewrongcolor=d23c3dff \
+#  --ringvercolor=ffffffff --ringwrongcolor=ffffffff --indpos="x+290:h-120" \
+#  --radius=20 --ring-width=3 --veriftext="" --wrongtext="" \
+#  --timecolor="ffffffff" --datecolor="ffffffff"
+
+i3lock \
+  -c 222222 --radius=100 \
+  --clock --line-uses-inside \
+  --ring-width=3 \
+  --ringcolor=00000000 --insidecolor=00000000 \
+  --keyhlcolor=ffffffff --bshlcolor=ffffffff \
+  --ringvercolor=00000000 --ringwrongcolor=00000000 \
+  --insidevercolor=00000000 --insidewrongcolor=00000000 \
+  --timecolor=ffffffff --datecolor=ffffffff \
+  --verifcolor=ffffffff --wrongcolor=aa0000ff
+
+# sleep 1 adds a small delay to prevent possible race conditions with suspend
+sleep 1
+
+exit 0
